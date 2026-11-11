@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>सुहास ❖ कोमल – शुभ-विवाह | Wedding Invitation</title>
+  <meta name="theme-color" content="#4A0B18">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/card.css">
+</head>
+<body>
+
+<!-- Shared ornament used on the card (corner paisley) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="corner" viewBox="0 0 100 100">
+      <path d="M4 4H64M4 4V64" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M13 13C44 12 62 30 60 60C44 56 33 50 26 42C18 34 13 26 13 13Z" fill="currentColor" opacity=".92"/>
+      <path d="M22 22C40 22 50 32 51 48C40 45 32 40 28 35C24 31 22 28 22 22Z" fill="none" stroke="#4A0B18" stroke-width="1.6" opacity=".7"/>
+      <circle cx="14" cy="14" r="4.5" fill="currentColor"/>
+      <circle cx="70" cy="8" r="2.6" fill="currentColor"/><circle cx="8" cy="70" r="2.6" fill="currentColor"/>
+      <path d="M78 6q9 3 6 11q-9-2-6-11zM6 78q3 9 11 6q-2-9-11-6z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- LAYER 1: background photograph -->
+<div class="bg" aria-hidden="true">
+  <img class="bg-blur" src="assets/images/couple.jpg" alt="">
+  <img class="bg-photo" id="bgPhoto" src="assets/images/couple.jpg" alt="Suhas and Komal">
+  <div class="bg-tint"></div>
+  <div class="rays"></div>
+  <canvas id="dust"></canvas>
+</div>
+
+<!-- Always-visible small controls -->
+<div class="toolbar" id="toolbar">
+  <button class="tbtn" id="musicBtn" type="button" aria-label="Music" title="Music" hidden>♪</button>
+  <button class="tbtn" id="shareBtn" type="button" aria-label="Share on WhatsApp" title="Share on WhatsApp">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zM8.6 7.6c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4l-.5-.3-1.8-.9c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.9-.4-2-.9-3-2.2-.2-.3.2-.3.5-.9.1-.2 0-.3 0-.5l-.9-2c-.2-.5-.4-.4-.6-.4z"/></svg>
+  </button>
+  <button class="tbtn" id="replayBtn" type="button" aria-label="Replay opening" title="Replay" hidden>↻</button>
+  <button class="tbtn" id="closeBtn" type="button" aria-label="Close invitation" title="Close" hidden>✕</button>
+</div>
+
+<!-- Welcome screen -->
+<main class="welcome" id="welcome">
+  <header class="w-top">
+    <p class="shloka">॥ श्री गणेशाय नमः ॥</p>
+    <p class="shloka">॥ श्री गजानन प्रसन्न ॥</p>
+    <h1 class="tagline">Two Hearts, One Beautiful Beginning</h1>
+  </header>
+  <section class="w-bottom">
+    <p class="invite-line">Together with our families, we invite you to celebrate our special day.</p>
+    <button class="open-btn" id="openBtn" type="button"><span>OPEN WEDDING INVITATION</span></button>
+  </section>
+</main>
+
+<!-- LAYER 2: popup overlay -->
+<div class="popup" id="popup" role="dialog" aria-modal="true" aria-label="Wedding invitation" hidden>
+  <div class="popup-dim" id="popupDim"></div>
+  <div class="stage" id="stage">
+    <!-- LAYER 3 + 4: the physical card -->
+    <div class="card" id="card" tabindex="0" role="button" aria-label="Tap to open the invitation">
+      <div class="card-base" id="cardBase">
+        <div class="pocket"></div>
+
+        <!-- LAYER 5: inner invitation (Marathi Patrika) -->
+        <div class="invite" id="invite">
+          <div class="sheet" id="sheet"><div class="sheet-scroll" id="patrika" tabindex="-1"></div></div>
+          <div class="fold fold-top" id="foldTop"><div class="face front"><div class="copy"></div></div><div class="face back"><i>❖</i></div></div>
+          <div class="fold fold-bot" id="foldBot"><div class="face front"><div class="copy"></div></div><div class="face back"><i>❖</i></div></div>
+        </div>
+
+        <!-- Four envelope flaps, each with its own hinge -->
+        <div class="flap flap-l" id="flapL"><div class="face front"></div><div class="face back"></div></div>
+        <div class="flap flap-r" id="flapR"><div class="face front"></div><div class="face back"></div></div>
+        <div class="flap flap-t" id="flapT"><div class="face front"></div><div class="face back"></div></div>
+        <div class="flap flap-b" id="flapB"><div class="face front"></div><div class="face back"></div></div>
+        <div class="seal" id="seal"><span>श्री</span></div>
+      </div>
+
+      <!-- Front cover, hinged on the left edge -->
+      <div class="cover" id="cover">
+        <div class="face front">
+          <span class="rim"></span>
+          <svg class="corner c-tl"><use href="#corner"/></svg><svg class="corner c-tr"><use href="#corner"/></svg>
+          <svg class="corner c-bl"><use href="#corner"/></svg><svg class="corner c-br"><use href="#corner"/></svg>
+          <div class="cover-inner">
+            <p class="c-shloka">॥ श्री गजानन प्रसन्न ॥</p>
+            <p class="c-shloka">॥ श्री खंडोबा प्रसन्न ॥</p>
+            <div class="medallion"><img src="assets/images/ganesh.jpg" alt="श्री गणेश"></div>
+            <h2 class="c-title">शुभ-विवाह</h2>
+            <p class="c-names" id="coverNames"></p>
+            <p class="c-date" id="coverDate"></p>
+            <p class="tap">TAP TO OPEN</p>
+          </div>
+          <span class="shade"></span>
+        </div>
+        <div class="face back"><div class="back-art"><b>॥ श्री गणेशाय नमः ॥</b></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<audio id="music" src="assets/audio/wedding-music.mp3" loop preload="none"></audio>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/patrika.js"></script>
+<script src="js/card.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

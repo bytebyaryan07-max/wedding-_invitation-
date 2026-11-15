@@ -18,7 +18,7 @@ window.WEDDING = {
   shareText:
     "॥ श्री गजानन प्रसन्न ॥ श्री खंडोबा प्रसन्न ॥\n" +
     "Suhas & Komal – Shubh Vivah\n" +
-    "Wednesday, 25/11/2026, muhurat 12:45 pm, Ashirwad Mangal Karyalay, Dahifal, Kalamb, Dharashiv.\n" +
+    "Wednesday, 25/11/2026, muhurat 12:45 pm, Aashirwad Mangal Karyalay, Dahifal, Kalamb, Dharashiv.\n" +
     "You are warmly invited. Open your invitation:",
 
   patrika: {
@@ -45,7 +45,7 @@ window.WEDDING = {
       "मिती कार्तिक कृ.१ शके १९४८ बुधवार दि.२५/११/२०२६ रोजी " +
       "दु.१२ वा. ४५ मि. या मुहुर्तावर करण्याचे योजिले आहे .तरी " +
       "वधु-वरास शुभार्शिवाद देण्यासाठी आवश्य यावे हि विनंती.",
-    haldi: { title: "हळदी समारंभ", text: "बुधवार दि.२५/११/२०२६ रोजी साकाळी ९:१५ वा" },
+    haldi: { title: "हळदी समारंभ", text: "बुधवार दि.२4/११/२०२६ " },
     venue: {
       title: "विवाहस्थळ",
       name: "आशीर्वाद मंगल कार्यालय",
